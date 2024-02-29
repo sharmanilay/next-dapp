@@ -1,5 +1,6 @@
 import {newKitFromWeb3} from '@celo/contractkit';
-import {useEffect} from 'react';
+import {useEffect, useState} from 'react';
+import Web3 from 'web3';
 
 const CeloBalance = () => {
   const [balance, setBalance] = useState('');
@@ -11,7 +12,7 @@ const CeloBalance = () => {
       const kit = newKitFromWeb3(web3);
       // Get the user's accounts;
       const accounts = await kit.web3.eth.getAccounts();
-      const account = account[0];
+      const account = accounts[0];
 
       // Get teh user's CELO balance
       const celoBalance = await kit.getTotalBalance(account);

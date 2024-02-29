@@ -1,5 +1,6 @@
 import {newKitFromWeb3} from '@celo/contractkit';
 import {useEffect, useState} from 'react';
+import Web3 from 'web3';
 
 const CeloWallet = () => {
   const [walletAddress, setWalletAddress] = useState('');
@@ -25,3 +26,5 @@ const CeloWallet = () => {
     </div>
   );
 };
+
+export default CeloWallet;
